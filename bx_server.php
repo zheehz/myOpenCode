@@ -1,6 +1,6 @@
 <?php 
 
-if($_POST['save']) // если нажата кнопка Сохранить
+if(!empty($_POST['save'])) // если нажата кнопка Сохранить
 {
     if (CModule::IncludeModule('iblock')) { // если модуль инфоблока загружен, тогда продолжим, иначе вернём ошибку
         $ibtype = "savedDocsByUser";
