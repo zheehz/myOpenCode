@@ -20,28 +20,28 @@ while ($arr=$rsIBlock->Fetch()) {
 
 // Массив описаний параметов компонента
 $arComponentParameters = array(
-	"GROUPS" => Array(
-		"SOURCE" => array(
-				"NAME" => "Параметры инфоблока"
-			),
-		),
-	"PARAMETERS" => array(
-		"IBLOCK_TYPE" => array(
-			"PARENT" => "SOURCE",
-			"NAME" => "Тип инфоблока",
-			"TYPE" => "LIST",
-			"VALUES" => $arIBlockType,
-			"REFRESH" => "Y",
-		),
-		"IBLOCK_ID" => array(
-			"PARENT" => "SOURCE",
-			"NAME" => "Название инфоблока",
-			"TYPE" => "LIST",
-			"ADDITIONAL_VALUES" => "Y",
-			"VALUES" => $arIBlock,
-			"REFRESH" => "Y",
-		),
+    "GROUPS" => Array(
+        "SOURCE" => array(
+                "NAME" => "Параметры инфоблока"
+            ),
+        ),
+    "PARAMETERS" => array(
+        "IBLOCK_TYPE" => array(
+            "PARENT" => "SOURCE",
+            "NAME" => "Тип инфоблока",
+            "TYPE" => "LIST",
+            "VALUES" => $arIBlockType,
+            "REFRESH" => "Y",
+        ),
+        "IBLOCK_ID" => array(
+            "PARENT" => "SOURCE",
+            "NAME" => "Название инфоблока",
+            "TYPE" => "LIST",
+            "ADDITIONAL_VALUES" => "Y",
+            "VALUES" => $arIBlock,
+            "REFRESH" => "Y",
+        ),
         "SET_TITLE" => array(),
         "CACHE_TIME" => array(),
-	)
+    )
 );
