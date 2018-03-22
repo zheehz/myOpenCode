@@ -1,19 +1,22 @@
 <?php
-
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) { die(); }
+?>
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script> 
+<?php
 global $USER;
 if (!$USER->IsAuthorized()) {
 	echo "Для отправки документа требуется авторизация!";
 } else { // если пользователь авторизован, тогда показываем форму 
 ?>
-	<form action="bitrix_server.php" method="POST" enctype="multipart/form-data">
+	<form action="" method="POST" enctype="multipart/form-data">
 <?php 
-	$str="";
+	$str="<h1>Добавить документ</h1>";
 	$str.="Телефон: <input type='text' name='phone' placeholder='Укажите телефон' /><br>";
 	$str.="Дата рождения: <input type='text' name='bday' placeholder='Выберите дату рождения' /><br>";
 	$str.="Имя: ";
 	// если у пользователя не заполнено имя, тогда добавим поле для ввода имени
-	if (!empty($USER->GetFirstName())) $str.=$USER->GetFirstName()."<br>"); 
-	else $str.="<input type='text' name='name' placeholder='Укажите имя' /><br>"; 
+	if (!empty($USER->GetFirstName())) { $str.=$USER->GetFirstName()."<br>"); }
+	else { $str.="<input type='text' name='name' placeholder='Укажите имя' /><br>"; }
 	echo $str;
 	echo CFile::InputFile("doc", 20, ""); 
 ?>
@@ -22,7 +25,6 @@ if (!$USER->IsAuthorized()) {
 <?php	
 }
 ?>
-/* jquery должен быть подключен */
 <script type="text/javascript">
 $(document).click(function() {
 	$('.err').remove();
